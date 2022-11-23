@@ -1,0 +1,13 @@
+{
+    "pincode_data": {
+        "column": {
+            "sr_no": true,
+            "pincode": true,
+            "cod": true,
+            "day": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

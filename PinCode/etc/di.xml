@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="NewTask\PinCode\Api\PinCodeRepositoryInterface" type="NewTask\PinCode\Model\PinCodeRepository"/>
+   <preference for="NewTask\PinCode\Api\Data\PinCodeInterface" type="NewTask\PinCode\Model\PinCode"/>
+    <!-- <preference for="NewTask\PinCode\Api\Data\Interface" type="NewTask\PinCode\Model\Grid"/> -->
+   <virtualType name="NewTask\PinCode\Model\ResourceModel\PinCode\PinCode\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">pincode_data</argument>
+            <argument name="resourceModel" xsi:type="string">NewTask\PinCode\Model\ResourceModel\PinCode</argument>
+        </arguments>
+    </virtualType>
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+<arguments>
+<argument name="collections" xsi:type="array">
+<item name="pincode_record_data_list_data_source" xsi:type="string">NewTask\PinCode\Model\ResourceModel\PinCode\PinCode\Collection</item>
+<item name="pincode_form_data_source" xsi:type="string">NewTask\PinCode\Model\ResourceModel\PinCode\PinCode\Collection</item>
+</argument>
+</arguments>
+</type>
+</config>
+

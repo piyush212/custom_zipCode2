@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Created By : Piyush
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name="pincode_data" resource="default" engine="innodb" comment="Pincode Data">
+      <column xsi:type="smallint" name="sr_no" padding="7" unsigned="false" nullable="false" identity="true" comment="ID" />
+      <column xsi:type="varchar" name="pincode" nullable="false" length="20" comment="pincode" />
+      <column xsi:type="varchar" name="cod" nullable="false" length="30" comment="cod" />
+      <column xsi:type="varchar" name="day" nullable="false" length="25" comment="day" />
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="sr_no" />
+      </constraint>
+   </table>
+</schema>

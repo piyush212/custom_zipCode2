@@ -1,0 +1,40 @@
+<?php
+$pin = $block->run();
+?>
+
+<?php
+
+function search($dbpin1, $pincode)
+{
+    $n = sizeof($dbpin1);
+    for($i = 0; $i < $n; $i++)
+    {
+        if($dbpin1[$i] == $pincode)
+            return $i;
+    }
+    return -1;
+}
+
+$dbpin1 = array_column($pin, 'pincode');
+
+if(isset($_POST['submit']))
+{
+    $pincode = $_POST['pincode'];
+    $result = search($dbpin1, $pincode);
+
+    if($result == -1)
+        echo "Delivery  is not available for this location $pincode";
+    else
+        echo "delivery is available for this location";
+}
+?>
+<?php
+
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+?>
+<form method="post" action="<?php echo($actual_link) ?>">
+    <h3>Pincode</h3>
+    <input type="text" name="pincode"><br><br>
+    <input type="submit" name="submit" value="Check"><br>
+</form>

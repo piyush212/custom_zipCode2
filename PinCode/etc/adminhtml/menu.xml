@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="NewTask_PinCode::pincode" title="PinCode management" module="NewTask_PinCode" sortOrder="10" resource="NewTask_PinCode::pincode"/>
+        <add id="NewTask_PinCode::add_row" title="PinCode details" module="NewTask_PinCode" sortOrder="20" parent="NewTask_PinCode::pincode" action="pincode/data" resource="NewTask_PinCode::add_row"/>
+    </menu>
+</config>
